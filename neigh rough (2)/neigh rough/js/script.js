@@ -116,15 +116,15 @@ var loaddata = function(place){
 	async:true
 	}).success(function(data){
 	var total = data.response.venues[0];
-	place.address = total.address;
-	if(place.address === null){
-		place.address = 'address not found!!';
+	place.name = total.name;
+	if(place.name === null){
+		place.name = 'name not found!!';
 	} else {
-		place.address = total.address;
+		place.name = total.name;
 	}
-	console.log(place.address);
-	  var image_prefix = data.response.venue.bestPhoto.prefix;
-        var image_suffix = data.response.venue.bestPhoto.suffix;
+	console.log(place.name);
+	  var image_prefix = total.bestPhoto.prefix;
+        var image_suffix = total.bestPhoto.suffix;
 
        
         var ima = image_prefix + "320x200" + image_suffix;
@@ -133,7 +133,7 @@ var loaddata = function(place){
 	    var infowindow = new google.maps.InfoWindow();
 		
 		
-        infowindow.setContent('<div>' + '<h5>' + place.address + '</h5>' + ' <p>'  + "<img src=" + ima + ">" + '</div>');
+        infowindow.setContent('<div>' + '<h5>' + place.name + '</h5>' + ' <p>'  + "<img src=" + ima + ">" + '</div>');
 		infowindow.open(map, place.marker);
 }).fail(function(error){
 	alert('failed to get fooursquare data');
