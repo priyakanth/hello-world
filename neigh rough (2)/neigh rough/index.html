@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MY INDIA</title>
+	<meta content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes" name="viewport">
+	<meta charset="utf-8">
+	<link href="css/stylesheet.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+      <div class="options-box">
+        <h1>five places to visit in mumbai!</h1>
+		
+		<div class="navbar">
+					<input class="search" data-bind="textInput: filter" placeholder="search" type="text">
+					<ul data-bind="foreach: search">
+						<li class="location_name">
+							<a class="location_name" data-bind="text: name, click: $parent.viewPlace" href="#"></a>
+						</li>
+		</div>
+		</div>
+<div id = "map">
+</div>
+</div>
+<script src = "js/knockout.js"></script>
+<script src = "js/jquery.min.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtAoGYW7LL6HB7IvJWHXASE1zlII4mamc&v=3&callback=initMap">
+</script>
+<script src = "js/script.js"></script>	
+</body>
+</head>
+</html>
