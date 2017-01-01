@@ -108,7 +108,7 @@ var loaddata = function(place){
 		dataType: 'json',
 		data: {
 			limit: '1',
-			ll: location.lat + ',' + location.lng,
+			ll: '19.075984, 72.877656',
 			client_id: client_id,
 			client_secret: client_secret,
 			v: '20130815'
@@ -141,7 +141,7 @@ var loaddata = function(place){
 function googleError(){
 	alert('google error....');
 }
-
+}
 
 var viewModel = function() {
     var self = this;
