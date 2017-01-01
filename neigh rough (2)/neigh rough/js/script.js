@@ -115,6 +115,7 @@ var loaddata = function(place){
 		},
 	async:true
 	}).success(function(data){
+		debugger;
 	var total = data.response.venues[0];
 	place.name = total.name;
 	if(place.name !== undefined){
