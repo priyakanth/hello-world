@@ -117,23 +117,18 @@ var loaddata = function(place){
 	}).success(function(data){
 	var total = data.response.venues[0];
 	place.name = total.name;
-	if(place.name === null){
+	if(place.name !== undefined){
 		place.name = 'name not found!!';
 	} else {
 		place.name = total.name;
 	}
 	console.log(place.name);
-	  var image_prefix = total.bestPhoto.prefix;
-        var image_suffix = total.bestPhoto.suffix;
-
-       
-        var ima = image_prefix + "320x200" + image_suffix;
-		console.log(ima);
+	
 		
 	    var infowindow = new google.maps.InfoWindow();
 		
 		
-        infowindow.setContent('<div>' + '<h5>' + place.name + '</h5>' + ' <p>'  + "<img src=" + ima + ">" + '</div>');
+        infowindow.setContent('<h5>' + place.name + '</h5>');
 		infowindow.open(map, place.marker);
 }).fail(function(error){
 	alert('failed to get fooursquare data');
