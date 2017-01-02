@@ -142,7 +142,17 @@ function googleError(){
 	alert('google error....');
 }
 }
-
+function showmarker(){
+	    for(var i=0; i < markers.length; i++){
+		markers[i].setMap(map);
+		}
+	
+}
+function hidemarker(){
+	for(var i=0; i< markers.length; i++){
+		markers[i].setMap(null);
+		}
+}
 var viewModel = function() {
     var self = this;
     this.markersArray = ko.observableArray(places);
@@ -152,18 +162,16 @@ var viewModel = function() {
     this.search = ko.computed(function() {
         filtered = self.filter();
         if (!filtered) {
-            
+            showmarker();
             return places;
         } else {
-		    
+		hidemarker();    
             return ko.utils.arrayFilter(places, function(place) {
 				self.res = place.name.toLowerCase().indexOf(self.filter().toLowerCase());
 				if(self.res >= 0) {
 					place.marker.setMap(map);
-										return place;
-				} else {
-					place.marker.setMap(null);
-				}
+					return place;
+				} 
 
 				
 					
