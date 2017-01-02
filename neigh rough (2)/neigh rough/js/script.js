@@ -110,10 +110,10 @@ var loaddata = function(place){
 		dataType: 'json',
 		data: {
 			limit: '1',
-			ll: 'latlng',
+			ll: latlng,
 			client_id: client_id,
 			client_secret: client_secret,
-			query: 'touristplace'
+			query: 'touristplace',
 			v: '20130815'
 		},
 	async:true
