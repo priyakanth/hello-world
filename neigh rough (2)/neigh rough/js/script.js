@@ -113,7 +113,7 @@ var loaddata = function(place){
 			ll: latlng,
 			client_id: client_id,
 			client_secret: client_secret,
-			query: 'touristplace',
+			name: 'name',
 			v: '20130815'
 		},
 	async:true
