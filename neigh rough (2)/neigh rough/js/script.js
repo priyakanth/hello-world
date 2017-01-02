@@ -101,6 +101,8 @@ var markers = [];
 }
 
 var loaddata = function(place){
+	 console.log(place);
+	var latlng = place.location.lat + ',' + place.location.lng;
 	var client_id = 'EQBP51VCVZ0DTN5M0GGJJG55FLO2J0EMMFWOJHKU4PKHMJVJ';
 	var client_secret = 'EGLKWC2VIEI1K0H1EWNANPZ2I41KEDE30SCGYC0YRHWI1F0N';
 	$.ajax({
@@ -108,9 +110,10 @@ var loaddata = function(place){
 		dataType: 'json',
 		data: {
 			limit: '1',
-			ll: '19.075984, 72.877656',
+			ll: 'latlng',
 			client_id: client_id,
 			client_secret: client_secret,
+			query: 'touristplace'
 			v: '20130815'
 		},
 	async:true
