@@ -101,8 +101,9 @@ var markers = [];
 }
 
 var loaddata = function(place){
+	console.log(place.position.lat());
 	 console.log(place);
-	var latlng = place.location.lat + ',' + place.location.lng;
+	var latlng = place.position.lat() + ',' + place.position.lng();
 	var client_id = 'EQBP51VCVZ0DTN5M0GGJJG55FLO2J0EMMFWOJHKU4PKHMJVJ';
 	var client_secret = 'EGLKWC2VIEI1K0H1EWNANPZ2I41KEDE30SCGYC0YRHWI1F0N';
 	$.ajax({
