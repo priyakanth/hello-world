@@ -171,6 +171,8 @@ var viewModel = function() {
 				if(self.res >= 0) {
 					place.marker.setMap(map);
 					return place;
+				} else {
+					place.marker.setMap(null);
 				} 
 
 				
