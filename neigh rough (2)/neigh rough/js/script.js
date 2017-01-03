@@ -148,11 +148,7 @@ function showmarker(){
 		}
 	
 }
-function hidemarker(){
-	for(var i=0; i< markers.length; i++){
-		markers[i].setMap(null);
-		}
-}
+
 var viewModel = function() {
     var self = this;
     this.markersArray = ko.observableArray(places);
@@ -165,7 +161,7 @@ var viewModel = function() {
             showmarker();
             return places;
         } else {
-		hidemarker();    
+		    
             return ko.utils.arrayFilter(places, function(place) {
 				self.res = place.name.toLowerCase().indexOf(self.filter().toLowerCase());
 				if(self.res >= 0) {
@@ -187,7 +183,7 @@ var viewModel = function() {
 
     // when name of the location clicked displays infowindow
     this.viewPlace = function(place) {
-		loaddata(place);
+		google.maps.event.trigger(place.marker, 'click');
         
         
     };
